@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced HTML5 Page with Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header, main, footer {
+            padding: 1rem;
+            max-width: 900px;
+            margin: auto;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        table, th, td {
+            border: 1px solid #aaa;
+        }
+        th, td {
+            padding: 0.5rem;
+            text-align: left;
+        }
+        fieldset {
+            border: 1px solid #aaa;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        legend {
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin-top: 0.5rem;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.3rem;
+            box-sizing: border-box;
+        }
+        button {
+            background: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>HTML5 Content & Form Showcase</h1>
+    <p>This page demonstrates HTML5 lists, tables, media elements, and a complete form with built-in validation.</p>
+</header>
+
+<main>
+    <!-- Lists Section -->
+    <section>
+        <h2>Popular Web Development Technologies</h2>
+        <h3>Ordered List (Ranking)</h3>
+        <ol>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+        </ol>
+
+        <h3>Unordered List (Categories)</h3>
+        <ul>
+            <li>Frontend
+                <ul>
+                    <li>React</li>
+                    <li>Vue</li>
+                </ul>
+            </li>
+            <li>Backend
+                <ul>
+                    <li>Node.js</li>
+                    <li>Django</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Table Section -->
+    <section>
+        <h2>Web Technology Comparison</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Technology</th>
+                    <th>Primary Use</th>
+                    <th>Difficulty (1-5)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HTML5</td>
+                    <td>Structure</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>CSS3</td>
+                    <td>Styling</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td>Interactivity</td>
+                    <td>3</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Media Section -->
+    <section>
+        <h2>HTML5 Media Examples</h2>
+        <figure>
+            <img src="https://via.placeholder.com/600x200" alt="Placeholder Image" width="100%">
+            <figcaption>Example of an embedded image</figcaption>
+        </figure>
+
+        <h3>Audio Sample</h3>
+        <audio controls>
+            <source src="sample.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3>Video Sample</h3>
+        <video controls width="100%">
+            <source src="sample.mp4" type="video/mp4">
+            Your browser does not support the video element.
+        </video>
+    </section>
+
+    <!-- Form Section -->
+    <section>
+        <h2>Registration Form</h2>
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Personal Information</legend>
+
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" placeholder="John Doe" required minlength="3">
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="example@email.com" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="+27 123 456 789" pattern="^\+?\d{10,15}$" required>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">--Select--</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Account Details</legend>
+
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required minlength="4" maxlength="15">
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password"
+                       required minlength="6"
+                       pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
+                       title="Must be at least 6 characters, include at least one letter and one number">
+
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Preferences</legend>
+                <label>
+                    <input type="checkbox" name="newsletter" value="yes">
+                    Subscribe to our newsletter
+                </label>
+
+                <label>
+                    <input type="radio" name="contact-method" value="email" required> Email
+                </label>
+                <label>
+                    <input type="radio" name="contact-method" value="phone" required> Phone
+                </label>
+
+                <label for="bio">Short Bio:</label>
+                <textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself..." minlength="10"></textarea>
+            </fieldset>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 HTML5 Showcase. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
+
